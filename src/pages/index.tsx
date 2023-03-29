@@ -22,8 +22,8 @@ const Index = () => {
       />
       <TemplateGlobal
         showDefaultPage={true}
-        title=" que nos representam"
-        description="Vamos além de uma simples entrega!"
+        title=" #jobs"
+        description="algums de nossos projetos"
       ></TemplateGlobal>
     </>
   )

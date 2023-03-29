@@ -24,7 +24,7 @@ const LayoutIntro = ({ title, description }: Props) => {
         <Image
           src={'/images/customer_07.png'}
           layout="fixed"
-          className="visible-on-mobile image"
+          className="image"
           height={30}
           width={120}
           alt={'D2F Software House'}
@@ -32,7 +32,7 @@ const LayoutIntro = ({ title, description }: Props) => {
         <Image
           src={'/images/customer_02.png'}
           layout="fixed"
-          className="visible-on-mobile image"
+          className="image"
           height={60}
           width={120}
           alt={'D2F Software House'}
@@ -40,17 +40,17 @@ const LayoutIntro = ({ title, description }: Props) => {
         <Image
           src={'/images/customer_01.png'}
           layout="fixed"
-          className="visible-on-mobile image"
+          className="image"
           height={80}
-          width={120}
+          width={140}
           alt={'D2F Software House'}
         />
         <Image
           src={'/images/customer_06.png'}
           layout="fixed"
-          className="visible-on-mobile image"
+          className="image"
           height={60}
-          width={120}
+          width={150}
           alt={'D2F Software House'}
         />
       </S.Customer>
