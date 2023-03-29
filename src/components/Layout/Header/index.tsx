@@ -46,7 +46,7 @@ const LayoutHeader: React.FC<Props> = ({ showDefaultPage = true }) => {
             </S.IconBack>
           )}
         </S.Column>
-        <S.Column>
+        <S.Column style={{ paddingRight: 20 }}>
           <BtnWhats />
         </S.Column>
       </S.Container>
