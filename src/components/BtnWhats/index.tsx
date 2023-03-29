@@ -15,7 +15,7 @@ export default function BtnWhats() {
       <S.MenuItem>
         <Button
           id="btn-entrar"
-          label="Fale com a gente!"
+          label="Contato"
           key="btn-entrar"
           onClick={handleClick}
           className="btn-outlined-secondary"
