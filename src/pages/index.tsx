@@ -2,16 +2,6 @@ import React from 'react'
 
 import { TemplateGlobal } from 'templates/Global'
 import { SeoMeta } from 'components/SeoMeta'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowCircleUp,
-  faMap,
-  faMapMarkedAlt,
-  faMapMarker,
-  faMapMarkerAlt,
-  faMapPin,
-  faMapSigns
-} from '@fortawesome/free-solid-svg-icons'
 
 const Index = () => {
   return (
@@ -22,7 +12,7 @@ const Index = () => {
       />
       <TemplateGlobal
         showDefaultPage={true}
-        title=" #jobs"
+        title=" #foco"
         description="algums de nossos clientes"
       ></TemplateGlobal>
     </>

@@ -23,8 +23,8 @@ const LayoutHeader: React.FC<Props> = ({ showDefaultPage = true }) => {
                 src={'/images/logo_dark.png'}
                 layout="fixed"
                 className="visible-on-mobile"
-                height={60}
-                width={191}
+                height={50}
+                width={170}
                 alt={'D2F Software House'}
               />
             </a>
@@ -46,7 +46,7 @@ const LayoutHeader: React.FC<Props> = ({ showDefaultPage = true }) => {
             </S.IconBack>
           )}
         </S.Column>
-        <S.Column style={{ paddingRight: 20 }}>
+        <S.Column style={{ paddingLeft: 20, paddingRight: 20 }}>
           <BtnWhats />
         </S.Column>
       </S.Container>

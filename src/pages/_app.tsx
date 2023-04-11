@@ -3,7 +3,6 @@ import 'styles/global.scss'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
-import { SessionProvider } from 'next-auth/react'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -56,10 +55,8 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="msvalidate.01" content="EC9DC7AA2D1324D5432E4B6657C6F233" />
         <link rel="icon" href="/images/favicon/favicon.ico" />
       </Head>
-      <SessionProvider>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </SessionProvider>
+      <GlobalStyles />
+      <Component {...pageProps} />
     </>
   )
 }

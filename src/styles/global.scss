@@ -182,3 +182,13 @@ button {
 .btn-block {
   width: 100%;
 }
+
+a {
+  color: #adadad;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: #f58c3c;
+  }
+}

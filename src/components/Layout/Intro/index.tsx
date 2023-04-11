@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
 
 import * as S from './styles'
 
@@ -15,7 +15,7 @@ const LayoutIntro = ({ title, description }: Props) => {
       <S.Container>
         <S.Column>
           <h3>
-            <span>Clientes</span> {title}
+            <span>Nosso</span> {title}
           </h3>
           <h4>{description}</h4>
         </S.Column>
@@ -27,6 +27,7 @@ const LayoutIntro = ({ title, description }: Props) => {
           className="image"
           height={30}
           width={120}
+          quality={70}
           alt={'D2F Software House'}
         />
         <Image
@@ -35,6 +36,7 @@ const LayoutIntro = ({ title, description }: Props) => {
           className="image"
           height={60}
           width={120}
+          quality={70}
           alt={'D2F Software House'}
         />
         <Image
@@ -43,6 +45,7 @@ const LayoutIntro = ({ title, description }: Props) => {
           className="image"
           height={80}
           width={140}
+          quality={70}
           alt={'D2F Software House'}
         />
         <Image
@@ -51,6 +54,7 @@ const LayoutIntro = ({ title, description }: Props) => {
           className="image"
           height={60}
           width={150}
+          quality={70}
           alt={'D2F Software House'}
         />
       </S.Customer>
