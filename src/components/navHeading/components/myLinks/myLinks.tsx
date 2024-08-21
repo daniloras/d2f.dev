@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-import styles from '@/components/navHeading/components/MyLinks/myLinks.module.scss'
+import styles from './myLinks.module.scss'
 import socialLinks from './myLinks.data'
 
 
