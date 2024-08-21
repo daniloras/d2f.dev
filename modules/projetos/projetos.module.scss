@@ -1,8 +1,0 @@
-.projetos {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-
-  @media screen and (max-width:900px) {
-    display: block;
-  }
-}
