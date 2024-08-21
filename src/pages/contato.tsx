@@ -1,21 +1,17 @@
-import React from 'react'
+import Head from 'next/head'
 
-import { TemplateGlobal } from 'templates/Global'
-import { SeoMeta } from 'components/SeoMeta'
+import { Contato } from '@/modules/contato/contato'
 
-const Index = () => {
+export default function contato() {
   return (
     <>
-      <SeoMeta
-        title="D2F Contato"
-        description="Somos uma software house que vai além da entrega, desenvolvimento sob demanda. Teve uma idéia?! Vamos tomar um café e surpreenda-se!"
-      />
-      <TemplateGlobal
-        showDefaultPage={false}
-        title=" Obrigado!"
-        description="Atendimento iniciado pelo Whatsapp"
-      ></TemplateGlobal>
+      <Head>
+        <title>Entre em Contato com a D2F: Vamos Criar Soluções Juntos</title>
+        <meta name="description" content="Estamos a um clique de transformar suas ideias em realidade. Entre em contato e vamos inovar juntos." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Contato />
     </>
   )
 }
-export default Index
