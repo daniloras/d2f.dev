@@ -1,7 +1,7 @@
 import anime from 'animejs'
 import { useEffect } from 'react'
 
-import styles from '@/components/dotgrid/dotgrid.module.scss'
+import styles from './dotgrid.module.scss'
 
 export const DotGrid = () => {
   const GRID_WIDTH = 25
