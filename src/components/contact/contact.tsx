@@ -78,7 +78,7 @@ export const Contact = () => {
                 required
                 name="message"
               ></textarea>
-              <ButtonOutline isLoading variant='submit'>
+              <ButtonOutline isLoading={isLoading} variant='submit'>
                 Enviar mensagem
               </ButtonOutline>
             </form>
