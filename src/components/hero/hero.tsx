@@ -35,6 +35,8 @@ export const Hero = () => {
         <Reveal>
           <ButtonOutline
             onClick={() => document.getElementById('contato')?.scrollIntoView()}
+            variant='click'
+            isLoading={false}
           >
             Bora tomar um café?
           </ButtonOutline>

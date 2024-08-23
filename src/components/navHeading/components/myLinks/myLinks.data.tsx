@@ -1,4 +1,4 @@
-import { AiOutlineInstagram, AiOutlineLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
 import React from 'react'
 
 import { Props } from '@/components/navHeading/components/myLinks/myLinks.interface'
@@ -10,15 +10,20 @@ const socialLinks: Props[] = [
     delay: 0.1
   },
   {
+    href: 'https://www.instagram.com/d2f.dev',
+    icon: <AiOutlineInstagram size='2.4rem' />,
+    delay: 0.3
+  },
+  {
+    href: 'https://www.facebook.com/d2f.dev',
+    icon: <AiOutlineFacebook size='2.4rem' />,
+    delay: 0.2
+  },
+  {
     href: 'https://linkedin.com/company/d2f-software-house',
     icon: <AiOutlineLinkedin size='2.4rem' />,
     delay: 0.2
   },
-  {
-    href: 'https://www.instagram.com/d2f.dev',
-    icon: <AiOutlineInstagram size='2.4rem' />,
-    delay: 0.3
-  }
 ]
 
 export default socialLinks

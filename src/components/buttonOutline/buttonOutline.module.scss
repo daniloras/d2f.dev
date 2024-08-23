@@ -43,3 +43,15 @@
   left: 0;
   top: 0;
 }
+
+.buttonOutline:disabled {
+  cursor: not-allowed; /* Remove o cursor pointer */
+  opacity: 0.5; /* Adiciona uma opacidade menor para indicar que está desabilitado */
+  color: var(--brand-dark); /* Cor alternativa se desejar */
+  border-color: var(--brand-dark); /* Cor da borda alternativa se desejar */
+}
+
+.buttonOutline:disabled::before {
+  background: transparent; /* Remover o background ao ser desabilitado */
+  transition: none; /* Remove transições ao ser desabilitado */
+}
