@@ -76,7 +76,7 @@
   transition: 0.25s color;
 
   @media screen and (max-width:400px) {
-    font-size: var(--text-sm);
+    font-size: 14px!important;
   }
 }
 

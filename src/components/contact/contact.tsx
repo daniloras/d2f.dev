@@ -15,6 +15,7 @@ export const Contact = () => {
     register,
     handleSubmit,
     reset,
+    formState: { isLoading } 
   } = useForm<IFormImputs>()
 
   const registerWithMask = useHookFormMask(register)
@@ -77,7 +78,7 @@ export const Contact = () => {
                 required
                 name="message"
               ></textarea>
-              <ButtonOutline>
+              <ButtonOutline isLoading variant='submit'>
                 Enviar mensagem
               </ButtonOutline>
             </form>

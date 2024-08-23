@@ -1,6 +1,8 @@
 import { MouseEventHandler } from 'react'
 
 export interface Props {
-  children: string | JSX.Element;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  children: string | JSX.Element;
+  isLoading?: boolean;
+  variant: 'submit' | 'click';
 }
