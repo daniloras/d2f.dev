@@ -9,27 +9,32 @@ import { Reveal } from '@/components/reveal/reveal'
 import { Intro } from '@/components/contact/components/Intro/intro'
 import styles from '@/components/contact/contact.module.scss'
 import { IFormImputs } from '@/components/contact/contact.interface'
+import { useState } from 'react'
 
 export const Contact = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false) 
+
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { isLoading } 
+    reset
   } = useForm<IFormImputs>()
 
   const registerWithMask = useHookFormMask(register)
 
   const onSubmit: SubmitHandler<IFormImputs> = async ({ name, email, phone, message }, e) => {
     try {
+      setIsLoading(true)
       e.preventDefault()
       await axios.post('/api/contact', {
         name, email, phone, message
       })
       reset()
       toast('Mensagem enviada com sucesso')
+      setIsLoading(false)
     } catch (error) {
       toast.error(error.response.data.message)
+      setIsLoading(false)
     }
   }
 
