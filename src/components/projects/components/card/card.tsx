@@ -62,7 +62,7 @@ export const Card = (data: Props) => {
  
               {
                 projectLink != '' && (
-                  <Link href={projectLink} target="_blank" rel="nofollow">
+                  <Link href={projectLink} aria-label={title} target="_blank" rel="nofollow">
                     <AiOutlineExport size="2.8rem" />
                   </Link>
                 )
