@@ -1,10 +1,13 @@
-import { ButtonScrollTop } from '@/components/buttonScrollTop/buttonScrollTop'
-import { About } from '@/components/about/about'
-import { Contact } from '@/components/contact/contact'
-import { Hero } from '@/components/hero/hero'
-import { Projects } from '@/components/projects/projects'
-import { SideBar } from '@/components/sidebar/sideBar'
-import { NavHeading } from '@/components/navHeading/navHeading'
+import dynamic from 'next/dynamic'
+
+// Importando dinamicamente os componentes
+const SideBar = dynamic(() => import('@/components/sidebar/sideBar').then(mod => mod.SideBar))
+const NavHeading = dynamic(() => import('@/components/navHeading/navHeading').then(mod => mod.NavHeading))
+const Hero = dynamic(() => import('@/components/hero/hero').then(mod => mod.Hero))
+const About = dynamic(() => import('@/components/about/about').then(mod => mod.About))
+const Projects = dynamic(() => import('@/components/projects/projects').then(mod => mod.Projects))
+const Contact = dynamic(() => import('@/components/contact/contact').then(mod => mod.Contact))
+const ButtonScrollTop = dynamic(() => import('@/components/buttonScrollTop/buttonScrollTop').then(mod => mod.ButtonScrollTop))
 
 import styles from '@/modules/home/home.module.scss'
 
@@ -18,7 +21,7 @@ export const Home = () => {
           <Hero />
           <About />
           <Projects />
-          <Contact /> 
+          <Contact />
           <ButtonScrollTop />
           <div
             style={{
