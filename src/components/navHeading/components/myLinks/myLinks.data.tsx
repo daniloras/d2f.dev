@@ -5,7 +5,7 @@ import { Props } from '@/components/navHeading/components/myLinks/myLinks.interf
 
 const socialLinks: Props[] = [
   {
-    href: 'https://api.whatsapp.com/send/?phone=11911300127&text=Ol%C3%A1+D2F%2C+Gostaria+de+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0',
+    href: 'https://api.whatsapp.com/send/?phone=11967653062&text=Ol%C3%A1+D2F%2C+Gostaria+de+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0',
     icon: <AiOutlineWhatsApp size='2.4rem' />,
     delay: 0.1
   },

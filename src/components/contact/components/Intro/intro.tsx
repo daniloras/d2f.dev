@@ -19,10 +19,10 @@ export const Intro = () => {
       </Reveal>
       <Reveal width="100%">
         <div className={styles.callAction}>
-          <Link href="https://api.whatsapp.com/send/?phone=11911300127&text=Ol%C3%A1+D2F%2C+Gostaria+de+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0">
+          <Link href="https://api.whatsapp.com/send/?phone=11967653062&text=Ol%C3%A1+D2F%2C+Gostaria+de+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" target='_blank'>
             <div className={styles.contactEmail}>
               <RiWhatsappFill size="2.4rem" />
-              <span>(11) 9-1130-0127</span>
+              <span>(11) 9-6765-3062</span>
             </div>
           </Link>
           <Link href="mailto:contato@d2f.dev">
