@@ -122,7 +122,7 @@ export const projects: Props[] = [
       null,
   },
   {
-    title: 'Ogham Consultoria',
+    title: 'IV Igreja Presbiteriana',
     imgSrc: '/project-imgs/11.jpg',
     projectLink: null,
     tech: [],
@@ -130,7 +130,7 @@ export const projects: Props[] = [
       null,
   },
   {
-    title: 'IV Igreja Presbiteriana',
+    title: 'Ogham Consultoria',
     imgSrc: '/project-imgs/12.jpg',
     projectLink: null,
     tech: [],
