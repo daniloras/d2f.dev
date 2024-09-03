@@ -1,7 +1,7 @@
 export interface Props { 
-  description: string;
-  projectLink: string;
+  description?: string;
+  projectLink?: string;
   imgSrc: string;
-  tech: string[];
+  tech?: string[];
   title: string;
 }

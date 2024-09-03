@@ -61,7 +61,7 @@ export const Card = (data: Props) => {
               <div className={styles.projectTitleLine} />
  
               {
-                projectLink != '' && (
+                projectLink  && (
                   <Link href={projectLink} aria-label={title} target="_blank" rel="nofollow">
                     <AiOutlineExport size="2.8rem" />
                   </Link>
@@ -69,14 +69,18 @@ export const Card = (data: Props) => {
               }
             </div>
           </Reveal>
+          {tech && (
           <Reveal>
             <div className={styles.projectTech}>{tech.join(' - ')}</div>
           </Reveal>
+          )}
+          {tech && (
           <Reveal>
             <p className={styles.projectDescription}>
               {description}
             </p>
           </Reveal>
+          )}
         </div>
       </motion.div> 
     </>
