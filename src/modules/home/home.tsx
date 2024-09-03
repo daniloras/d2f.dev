@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic'
 
-// Importando dinamicamente os componentes
 const SideBar = dynamic(() => import('@/components/sidebar/sideBar').then(mod => mod.SideBar))
 const NavHeading = dynamic(() => import('@/components/navHeading/navHeading').then(mod => mod.NavHeading))
 const Hero = dynamic(() => import('@/components/hero/hero').then(mod => mod.Hero))
