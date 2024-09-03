@@ -1,6 +1,6 @@
 import { Props } from '@/components/projects/components/card/card.interface'
 
-export const projects:Props[] = [
+export const projects: Props[] = [
   {
     title: 'Whirlpool Corporation',
     imgSrc: '/project-imgs/whirlpool.jpg',
@@ -32,19 +32,109 @@ export const projects:Props[] = [
     tech: ['TypeScript', 'NodeJS', 'Prisma', 'SCSS', 'PHP', 'Laravel', 'MySQL'],
     description:
       'Criamos um site exclusivo para fabricantes especializados em injeção de micropeças em zamac, com área dedicada para solicitação de orçamentos online, tornando o processo de compra mais ágil e acessível, fomentando novas parcerias e produtos.',
-  }, {
-    title: 'MathPulse',
-    imgSrc: '/project-imgs/mathpulse.jpg',
-    projectLink: 'https://mathpulse.vercel.app',
-    tech: ['TypeScript', 'NextJS', 'SCSS'],
+  },
+  //  {
+  //   title: 'MathPulse',
+  //   imgSrc: '/project-imgs/mathpulse.jpg',
+  //   projectLink: 'https://mathpulse.vercel.app',
+  //   tech: ['TypeScript', 'NextJS', 'SCSS'],
+  //   description:
+  //     'Criamos uma ferramenta online e gratuíta onde números aleatórios aparecem e desafiam você a somá-los e comparar com o resultado final. Com dificuldade parametrizada como tempo de exibição, dígitos e quantidade de números sorteados.',
+  // }, 
+  {
+    title: 'F.C.E Buffet',
+    imgSrc: '/project-imgs/1.jpg',
+    projectLink: null,
+    tech: [],
     description:
-      'Criamos uma ferramenta online e gratuíta onde números aleatórios aparecem e desafiam você a somá-los e comparar com o resultado final. Com dificuldade parametrizada como tempo de exibição, dígitos e quantidade de números sorteados.',
-  }, {
-    title: 'Bora realizar?',
-    imgSrc: '/project-imgs/banner-default.png',
-    projectLink: 'https://d2f.dev/#contato',
-    tech: ['Surpreenda-se', 'Ideia?', 'Realize'],
+      null,
+  },
+  {
+    title: 'Chámor',
+    imgSrc: '/project-imgs/2.jpg',
+    projectLink: null,
+    tech: [],
     description:
-      'Está pronto para transformar sua ideia em um projeto incrível? Entre em contato conosco para discutir como podemos desenvolver uma solução personalizada para você. nossa equipe estará pronta para ajudar a trazer sua visão à vida!',
+      null,
+  },
+  {
+    title: 'Hit Maker',
+    imgSrc: '/project-imgs/3.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'R.S.A. T.I.',
+    imgSrc: '/project-imgs/4.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'Clique Cartório',
+    imgSrc: '/project-imgs/5.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'V.A. Automóveis',
+    imgSrc: '/project-imgs/6.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'Veloster Auto Escola',
+    imgSrc: '/project-imgs/7.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'Passagem Produtora',
+    imgSrc: '/project-imgs/8.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'Bartop BK Evolution',
+    imgSrc: '/project-imgs/9.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'Liquida Shop',
+    imgSrc: '/project-imgs/10.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'Ogham Consultoria',
+    imgSrc: '/project-imgs/11.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
+  },
+  {
+    title: 'IV Igreja Presbiteriana',
+    imgSrc: '/project-imgs/12.jpg',
+    projectLink: null,
+    tech: [],
+    description:
+      null,
   },
 ]
