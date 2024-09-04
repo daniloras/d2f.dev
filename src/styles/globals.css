@@ -84,11 +84,15 @@ input[type=number] {
   padding: 0.2rem 0.8rem;
   border-radius: 999px;
 }
-
-.chip:hover {
+.chip-active {
   background: #aa772c; 
 }
 
+.chip:hover {
+    background: #aa772c; 
+
+  
+}
 .iconTextWrapper {
   display: flex;
   align-items: flex-start;

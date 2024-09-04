@@ -5,9 +5,12 @@ import Link from 'next/link'
 import styles from '@/components/stats/stats.module.scss'
 import { Reveal } from '@/components/reveal/reveal'
 import { servicesData } from '@/modules/servicos/servicos.data'
+import { useRouter } from 'next/router'
 
 export const Stats = () => {
-
+  const router = useRouter()
+  const slugPage = router.query.slug
+  
   const services =  servicesData.filter((i) => i.type === 'PRIMARY')
 
   const additionalServices =  servicesData.filter((i) => i.type === 'SECONDARY')
@@ -22,7 +25,7 @@ export const Stats = () => {
           <div className={styles.statGrid}> 
             {services?.map(({slug, title}, index) => (
               <Link href={`/servicos/${slug}`} key={index}>
-                <span key={index} className="chip">{title}</span>
+                <span key={index} className={`chip ${slug === slugPage && 'chip-active'}`}>{title}</span>
               </Link>
             ))}
           </div>
@@ -37,7 +40,7 @@ export const Stats = () => {
           <div className={styles.statGrid}>
             {additionalServices?.map(({slug, title}, index) => (
               <Link href={`/servicos/${slug}`} key={index}>
-                <span key={index} className="chip">{title}</span>
+                <span key={index} className={`chip ${slug === slugPage && 'chip-active'}`}>{title}</span>
               </Link>
             ))}
           </div>
