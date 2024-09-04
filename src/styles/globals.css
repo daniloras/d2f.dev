@@ -84,3 +84,23 @@ input[type=number] {
   padding: 0.2rem 0.8rem;
   border-radius: 999px;
 }
+
+.chip:hover {
+  background: #aa772c; 
+}
+
+.iconTextWrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px; /* Ajuste conforme necessário */
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px; /* Espaço entre o ícone e o texto */
+}
+
+.serviceText {
+  flex: 1; /* Faz o texto ocupar o espaço restante */
+}

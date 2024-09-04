@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/animejs": "^3.1.12",
     "@types/axios": "^0.14.0",
-    "@types/nodemailer": "^6.4.15"
+    "@types/nodemailer": "^6.4.15",
+    "@types/react-icons": "^3.0.0"
   }
 }
