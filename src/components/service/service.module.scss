@@ -1,0 +1,41 @@
+.service {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2.4rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.serviceText {
+  margin-bottom: 2.4rem;
+  font-weight: 200;
+
+  span{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    background: var(--background-light);
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 20px;
+    margin-left: 0.6rem;
+    float: right;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.linksText {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: var(--text-sm);
+  color: var(--brand);
+}

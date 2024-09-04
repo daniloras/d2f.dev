@@ -1,27 +1,16 @@
 import { AiFillCode } from 'react-icons/ai'
 import { MdDevicesOther } from 'react-icons/md'
+import Link from 'next/link'
 
 import styles from '@/components/stats/stats.module.scss'
 import { Reveal } from '@/components/reveal/reveal'
+import { servicesData } from '@/modules/servicos/servicos.data'
 
 export const Stats = () => {
-  const services: string[] = [
-    'Criação de software',
-    'Sites e aplicativos',
-    'UX Research',
-    'Consultoria',
-    'Design de interface',
-    'Arquitetura de sistemas'
-  ]
 
-  const additionalServices: string[] = [
-    'Outsourcing de desenvolvedores',
-    'Otimização de Legado',
-    'Migração de Cloud',
-    'Análise de código',
-    'Automação de processos',
-    'Integração de APIs',
-  ]
+  const services =  servicesData.filter((i) => i.type === 'PRIMARY')
+
+  const additionalServices =  servicesData.filter((i) => i.type === 'SECONDARY')
   return (
     <div className={styles.stats}>
       <Reveal>
@@ -31,8 +20,10 @@ export const Stats = () => {
             <span>Serviços</span>
           </h4>
           <div className={styles.statGrid}> 
-            {services.map((service, index) => (
-              <span key={index} className="chip">{service}</span>
+            {services?.map(({slug, title}, index) => (
+              <Link href={`/servicos/${slug}`} key={index}>
+                <span key={index} className="chip">{title}</span>
+              </Link>
             ))}
           </div>
         </div>
@@ -44,8 +35,10 @@ export const Stats = () => {
             <span>Outros serviços</span>
           </h4>
           <div className={styles.statGrid}>
-            {additionalServices.map((service, index) => (
-              <span key={index} className="chip">{service}</span>
+            {additionalServices?.map(({slug, title}, index) => (
+              <Link href={`/servicos/${slug}`} key={index}>
+                <span key={index} className="chip">{title}</span>
+              </Link>
             ))}
           </div>
         </div>
