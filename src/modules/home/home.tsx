@@ -7,8 +7,9 @@ const About = dynamic(() => import('@/components/about/about').then(mod => mod.A
 const Projects = dynamic(() => import('@/components/projects/projects').then(mod => mod.Projects))
 const Contact = dynamic(() => import('@/components/contact/contact').then(mod => mod.Contact))
 const ButtonScrollTop = dynamic(() => import('@/components/buttonScrollTop/buttonScrollTop').then(mod => mod.ButtonScrollTop))
+const ButtonWhatsapp = dynamic(() => import('@/components/buttonWhatsapp/buttonWhatsapp').then(mod => mod.ButtonWhatsapp))
 
-import styles from '@/modules/home/home.module.scss'
+import styles from '@/modules/home/home.module.scss' 
 
 export const Home = () => {
   return (
@@ -22,6 +23,7 @@ export const Home = () => {
           <Projects />
           <Contact />
           <ButtonScrollTop />
+          <ButtonWhatsapp />
           <div
             style={{
               height: '100px',

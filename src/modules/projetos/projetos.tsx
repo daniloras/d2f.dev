@@ -2,6 +2,7 @@ import { ButtonScrollTop } from '@/components/buttonScrollTop/buttonScrollTop'
 import { Projects } from '@/components/projects/projects'
 import { SideBar } from '@/components/sidebar/sideBar'
 import { NavHeading } from '@/components/navHeading/navHeading'
+import { ButtonWhatsapp } from '@/components/buttonWhatsapp/buttonWhatsapp'
 
 import styles from '@/modules/projetos/projetos.module.scss'
 
@@ -14,6 +15,7 @@ export const Projetos = () => {
           <NavHeading />
           <Projects />
           <ButtonScrollTop />
+          <ButtonWhatsapp />
           <div
             style={{
               height: '100px',
