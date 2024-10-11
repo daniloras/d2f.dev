@@ -1,10 +1,7 @@
 import { formSchema } from '@/components/contact/contact.schema'
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
 
-const user = process.env.NEXT_PUBLIC_EMAIL_USER
-const pass = process.env.NEXT_PUBLIC_EMAIL_PASSWORD
 const webhookUrl = process.env.NEXT_PUBLIC_DISCORD_URL
 
 type ResponseData = {
@@ -19,33 +16,6 @@ export default async function handler(
     try {
       const data = formSchema.parse(req.body)
       const { name, email, phone, message } = data
-
-      const transporter = nodemailer.createTransport({
-        host: 'smtplw.com.br',
-        port: 587,
-        secure: false,
-        auth: {
-          user,
-          pass,
-        },
-      })
-
-      const mailOptions = {
-        from: 'contato@d2f.dev',
-        to: 'contato@d2f.dev',
-        subject: `Contato site - ${email} `,
-        html: `
-            <div>
-                <p><b>Nome:</b> ${name}</p>
-                <p><b>E-mail:</b> ${email}</p>
-                <p><b>Telefone:</b> ${phone}</p>
-                <p><b>Mensagem:</b></p>
-                <p>${message}</p>
-            </div>
-        `,
-      }
-
-      await transporter.sendMail(mailOptions)
 
       await axios.post(webhookUrl, {
         'content': `**Nome:** ${name}\n\n**Telefone:** ${phone} \n\n**Email:** ${email}\n\n**Mensagem**\n\`\`\`${message}\`\`\``,
