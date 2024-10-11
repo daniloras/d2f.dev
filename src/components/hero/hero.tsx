@@ -16,8 +16,8 @@ export const Hero = () => {
         </Reveal>
         <Reveal>
           <h2 className={styles.subTitle}>
-            Precisando de um <span><ReactTypingEffect
-              text={['Site.', 'Integração API.', 'Aplicativo.', 'Sistemas sob demanda',]}
+            Precisando de <span><ReactTypingEffect
+              text={['um site?', 'uma integração de API?', 'um aplicativo?', 'sistemas sob demanda?']}
               speed={40}
               eraseSpeed={40}
               eraseDelay={900}
