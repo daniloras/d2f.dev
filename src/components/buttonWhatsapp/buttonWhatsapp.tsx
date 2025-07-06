@@ -13,6 +13,8 @@ export const ButtonWhatsapp = () => {
         placeholder="Envie suas perguntas aqui!"
         notification
         darkMode
-        notificationSound />
+        notificationSound
+        style={{ height: 'auto', width: 'auto'}}
+        />
   )
 }
