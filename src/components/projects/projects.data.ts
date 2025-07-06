@@ -2,6 +2,14 @@ import { Props } from '@/components/projects/components/card/card.interface'
 
 export const projects: Props[] = [
   {
+    title: 'Auto Escola Januário',
+    imgSrc: '/project-imgs/aejanuario.jpg',
+    projectLink: 'https://www.autoescolajanuario.com.br',
+    tech: ['TypeScript', 'NextJs', 'SCSS'],
+    description:
+      'Criamos um site exclusivo para a Auto Escola Januário, com área dedicada a alunos que buscam 1ª habilitação, renovação da CNH ou cursos. Um portal moderno, fácil de usar e focado em facilitar o atendimento e tirar dúvidas.',
+  },
+  {
     title: 'Whirlpool Corporation',
     imgSrc: '/project-imgs/whirlpool.jpg',
     projectLink: 'https://www.whirlpool.com',
