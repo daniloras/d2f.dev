@@ -2,6 +2,14 @@ import { Props } from '@/components/projects/components/card/card.interface'
 
 export const projects: Props[] = [
   {
+    title: 'SafeHook',
+    imgSrc: '/project-imgs/safehook.jpg',
+    projectLink: 'https://safehook.dev',
+    tech: ['TypeScript', 'React', 'Vite', 'Supabase'],
+    description:
+      'Desenvolvemos o SafeHook, uma ferramenta para receber e inspecionar webhooks e requisições HTTP em tempo real. Crie um endpoint em segundos, configure no seu sistema (Stripe, GitHub, Shopify...) e veja headers e body formatados conforme os eventos chegam, com retenção de dados e exportação em CSV, XLSX ou JSON.',
+  },
+  {
     title: 'Auto Escola Januário',
     imgSrc: '/project-imgs/aejanuario.jpg',
     projectLink: 'https://www.autoescolajanuario.com.br',
