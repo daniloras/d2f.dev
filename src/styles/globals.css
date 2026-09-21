@@ -1,5 +1,6 @@
 :root {
   font-size: 62.5%;
+  color-scheme: dark;
 
   --background: rgb(17, 17, 17);
   --bg-opaque: rgb(17, 17, 17, 0.25);
@@ -9,12 +10,31 @@
   --text: rgb(235, 236, 243);
   --brand: #aa772c;
 
+  --border: #fff;
+  --line: rgba(235, 236, 243, 0.15);
+  --dot: rgba(255, 255, 255, 0.15);
+
   --text-xs: 1.6rem;
   --text-sm: 1.8rem;
   --text-md: 2.2rem;
   --text-lg: 3.6rem;
   --text-xl: 5.6rem;
   --text-2xl: 9.6rem;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --background: rgb(246, 246, 248);
+  --bg-opaque: rgba(246, 246, 248, 0.25);
+  --background-light: rgb(228, 228, 233);
+  --background-dark: rgb(255, 255, 255);
+
+  --text: rgb(24, 24, 27);
+
+  --border: rgba(24, 24, 27, 0.35);
+  --line: rgba(24, 24, 27, 0.15);
+  --dot: rgba(24, 24, 27, 0.15);
 }
 
 * {
@@ -40,6 +60,7 @@ body {
 body {
   color: var(--text);
   background: var(--background);
+  transition: 0.25s background-color, 0.25s color;
 }
 
 a {

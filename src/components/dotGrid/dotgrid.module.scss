@@ -24,7 +24,7 @@
 }
 
 .dotWrapper:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--dot);
 }
 
 .dotWrapper:hover > .dot {

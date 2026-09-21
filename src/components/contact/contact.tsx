@@ -11,8 +11,11 @@ import styles from '@/components/contact/contact.module.scss'
 import { IFormImputs } from '@/components/contact/contact.interface'
 import { useState } from 'react'
 
+import { useTheme } from '@/components/themeToggle/useTheme'
+
 export const Contact = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false) 
+  const { theme } = useTheme()
 
   const {
     register,
@@ -40,7 +43,7 @@ export const Contact = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer theme={theme} />
       <section className="section-wrapper" id="contato">
         <div className={styles.contactWrapper}>
           <Intro />

@@ -1,0 +1,22 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.5;
+
+  position: relative;
+  z-index: 20;
+
+  transition: 0.25s color, 0.25s opacity;
+}
+
+.toggle:hover {
+  color: var(--brand);
+  opacity: 1;
+}

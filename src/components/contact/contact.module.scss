@@ -106,7 +106,7 @@
       background: var(--background);
       border-radius: .8rem;
       outline: none;
-      border: 1px solid #fff;
+      border: 1px solid var(--border);
       margin: .7rem;
     }
   }
@@ -120,7 +120,7 @@
     color: var(--brand);
     background: var(--background);
     outline: none;
-    border: 1px solid #fff;
+    border: 1px solid var(--border);
     border-radius: .8rem;
     margin: .7rem;
     margin-bottom: 14px;
