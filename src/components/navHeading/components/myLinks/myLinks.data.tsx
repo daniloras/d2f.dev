@@ -1,12 +1,13 @@
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
 import React from 'react'
 
+import { contactInfo } from '@/components/contact/contact.data'
 import { Props } from '@/components/navHeading/components/myLinks/myLinks.interface'
 
 const socialLinks: Props[] = [
   {
     description: 'Iniciar atendimento pelo nosso Whatsapp',
-    href: 'https://api.whatsapp.com/send/?phone=11967653062&text=Ol%C3%A1+D2F%2C+Gostaria+de+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0',
+    href: contactInfo.whatsappUrl,
     icon: <AiOutlineWhatsApp size='3.0rem' />,
     delay: 0.1
   },

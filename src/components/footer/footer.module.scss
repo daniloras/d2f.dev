@@ -1,0 +1,169 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  background: var(--background-dark);
+  font-size: var(--text-xs);
+  font-weight: 200;
+}
+
+.gradient {
+  height: 100px;
+  background: linear-gradient(180deg, var(--background), var(--background-dark));
+}
+
+.content {
+  max-width: 1150px;
+  margin: auto;
+  padding: 0 9.6rem 4.8rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2.4rem 3.6rem;
+  }
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 4.8rem;
+  padding-bottom: 4.8rem;
+  border-bottom: 1px solid var(--line);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 3.6rem;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  p {
+    max-width: 320px;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+}
+
+.brandTitle {
+  width: fit-content;
+  font-size: var(--text-lg);
+  font-weight: 900;
+  line-height: 1;
+
+  span {
+    color: var(--brand);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--background);
+  transition: 0.25s border-color, 0.25s color;
+
+  svg {
+    color: var(--brand);
+    flex-shrink: 0;
+  }
+
+  span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  strong {
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+
+  small {
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+}
+
+.badge:hover {
+  border-color: var(--brand);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  h5 {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+
+    span {
+      color: var(--brand);
+    }
+  }
+
+  a,
+  address {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+    opacity: 0.7;
+    font-style: normal;
+    line-height: 1.5;
+    transition: 0.25s color, 0.25s opacity;
+  }
+
+  address {
+    align-items: flex-start;
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 0.3rem;
+    }
+  }
+
+  a:hover {
+    color: var(--brand);
+    opacity: 1;
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding-top: 2.4rem;
+
+  > span {
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 1.6rem;
+
+  a {
+    opacity: 0.5;
+    transition: 0.25s color, 0.25s opacity;
+  }
+
+  a:hover {
+    color: var(--brand);
+    opacity: 1;
+  }
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RiMailSendFill, RiMapPinFill, RiWhatsappFill } from 'react-icons/ri'
 
+import { contactInfo } from '@/components/contact/contact.data'
 import { Reveal } from '@/components/reveal/reveal'
 import styles from '@/components/contact/contact.module.scss'
 
@@ -19,16 +20,16 @@ export const Intro = () => {
       </Reveal>
       <Reveal width="100%">
         <div className={styles.callAction}>
-          <Link href="https://api.whatsapp.com/send/?phone=11967653062&text=Ol%C3%A1+D2F%2C+Gostaria+de+informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0" target='_blank'>
+          <Link href={contactInfo.whatsappUrl} target='_blank'>
             <div className={styles.contactEmail}>
               <RiWhatsappFill size="2.4rem" />
-              <span>(11) 9-6765-3062</span>
+              <span>{contactInfo.phoneFormatted}</span>
             </div>
           </Link>
-          <Link href="mailto:contato@d2f.dev">
+          <Link href={`mailto:${contactInfo.email}`}>
             <div className={styles.contactEmail}>
               <RiMailSendFill size="2.4rem" />
-              <span>contato@d2f.dev</span>
+              <span>{contactInfo.email}</span>
             </div>
           </Link> </div>
       </Reveal>
@@ -38,7 +39,7 @@ export const Intro = () => {
             Caso prefira, podemos agendar uma call ou uma visita em nosso endereço na:</p>
 
           <p className={styles.contactCopy}>
-            <RiMapPinFill size="1.4rem" /> Av. Paulista, 1636 - sala 1504, Cerqueira César - São Paulo - SP, 01310-200.
+            <RiMapPinFill size="1.4rem" /> {contactInfo.address}
           </p>
           <p className={styles.contactCopy}>Você também pode utilizar nosso formulário de contato.</p>
         </>

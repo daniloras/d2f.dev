@@ -9,6 +9,7 @@ const Contact = dynamic(() => import('@/components/contact/contact').then(mod =>
 const ButtonScrollTop = dynamic(() => import('@/components/buttonScrollTop/buttonScrollTop').then(mod => mod.ButtonScrollTop))
 const ButtonWhatsapp = dynamic(() => import('@/components/buttonWhatsapp/buttonWhatsapp').then(mod => mod.ButtonWhatsapp))
 
+import { Footer } from '@/components/footer/footer'
 import styles from '@/modules/home/home.module.scss' 
 
 export const Home = () => {
@@ -24,14 +25,7 @@ export const Home = () => {
           <Contact />
           <ButtonScrollTop />
           <ButtonWhatsapp />
-          <div
-            style={{
-              height: '100px',
-              background:
-                'linear-gradient(180deg, var(--background), var(--background-dark))',
-            }}
-          >
-          </div>
+          <Footer />
         </main>
       </div>
     </>
