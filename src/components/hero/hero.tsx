@@ -1,4 +1,4 @@
-import ReactTypingEffect from 'react-typing-effect'
+import { TypingEffect } from '@/components/typingEffect/typingEffect'
 
 import { ButtonOutline } from '@/components/buttonOutline/buttonOutline'
 import { DotGrid } from '@/components/dotGrid/dotGrid'
@@ -16,7 +16,7 @@ export const Hero = () => {
         </Reveal>
         <Reveal>
           <h2 className={styles.subTitle}>
-            Precisando de <span><ReactTypingEffect
+            Precisando de <span><TypingEffect
               text={['um site?', 'uma integração de API?', 'um aplicativo?', 'sistemas sob demanda?']}
               speed={40}
               eraseSpeed={40}

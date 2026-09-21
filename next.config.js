@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  experimental: {
+  images: {
+    qualities: [60, 75],
   },
   async headers() {
     return [
