@@ -49,6 +49,16 @@
     border-right: 1px solid var(--brand);
     opacity: 1;
   }
+
+  .logoLink,
+  .logoLink:hover {
+    height: auto;
+    width: auto;
+    writing-mode: horizontal-tb;
+    opacity: 1;
+    border-right: none;
+    background: transparent;
+  }
 }
 
 .sideBar::-webkit-scrollbar {

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styles from '@/components/sidebar/sidebar.module.scss'
 import { menuItems } from '@/components/sidebar/sidebar.data'
@@ -34,13 +35,15 @@ export const SideBar = () => {
       transition={{ duration: 0.5 }}
       className={styles.sideBar}
     >
-      <Image 
-        src="/logo.png" 
-        width={40}
-        height={40} 
-        alt="D2F Software House"
-        className={styles.logo}
-      />
+      <Link href="/" aria-label="Ir para a página inicial" className={styles.logoLink}>
+        <Image
+          src="/logo.png"
+          width={40}
+          height={40}
+          alt="D2F Software House"
+          className={styles.logo}
+        />
+      </Link>
       {menuItems.map((item, index) => (
         <motion.a
           key={item.label}
