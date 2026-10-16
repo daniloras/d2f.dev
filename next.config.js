@@ -1,6 +1,16 @@
+const os = require('os')
+
+// IPs da máquina na rede local, para abrir o `yarn dev` de outro computador ou do celular.
+// Vale só em desenvolvimento.
+const lanHosts = Object.values(os.networkInterfaces())
+  .flat()
+  .filter((net) => net && net.family === 'IPv4' && !net.internal)
+  .map((net) => net.address)
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  allowedDevOrigins: lanHosts,
   images: {
     qualities: [60, 75],
   },

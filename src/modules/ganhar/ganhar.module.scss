@@ -1,0 +1,697 @@
+// Página /ganhar: visual próprio, separado do layout do site.
+// Layout: uma tela só, lida como o visor de uma câmera. Barra REC,
+// manchete, os dois cadastros, a ficha com 3 fatos e a linha do tempo de 1 hora.
+
+@mixin dark-tokens {
+  --bg: #0B1220;
+  --surface: #121B2D;
+  --ink: #E7EBF3;
+  --muted: #95A1B7;
+  --line: #26324A;
+  --accent: #7F95FF;
+  --accent-hover: #9AACFF;
+  --on-accent: #0B1220;
+  --rec: #FF5752;
+  --live: #3DDC84;
+  --shadow: rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+.page {
+  --bg: #ECEFF4;
+  --surface: #FAFBFD;
+  --ink: #0F1828;
+  --muted: #566176;
+  --line: #D0D7E2;
+  --accent: #2541D8;
+  --accent-hover: #1B33B8;
+  --on-accent: #FFFFFF;
+  --rec: #DE2F2C;
+  --live: #1A9A50;
+  --shadow: rgba(15, 24, 40, 0.16);
+  --logo-tile: #0E1626;
+  --pad-x: 30px;
+  --pad-y: clamp(28px, 4vh, 40px);
+  --vf-gap: 10px;
+  --vf-size: 16px;
+  --font-display: var(--font-archivo), 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-body: var(--font-archivo), 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  color-scheme: light;
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Segue o tema do sistema; se a pessoa escolheu o tema claro no site, respeita a escolha.
+@media (prefers-color-scheme: dark) {
+  :global(html:not([data-theme='light'])) .page {
+    @include dark-tokens;
+  }
+}
+
+:global(html[data-theme='dark']) .page {
+  @include dark-tokens;
+}
+
+.app {
+  min-height: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2vh, 24px);
+  padding-top: calc(var(--pad-y) + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--pad-y) + env(safe-area-inset-bottom, 0px));
+  padding-left: calc(var(--pad-x) + env(safe-area-inset-left, 0px));
+  padding-right: calc(var(--pad-x) + env(safe-area-inset-right, 0px));
+}
+
+// Tablet: mais respiro nas laterais, dentro dos cantos do visor
+@media (min-width: 721px) {
+  .page {
+    --pad-x: 36px;
+  }
+}
+
+// Computador: a largura máxima já afasta o conteúdo dos cantos
+@media (min-width: 1100px) {
+  .page {
+    --pad-x: 16px;
+    --pad-y: clamp(16px, 3vh, 32px);
+    --vf-gap: 14px;
+    --vf-size: 22px;
+  }
+}
+
+// Cantos do visor em todas as telas
+.vf {
+  position: fixed;
+  z-index: 1;
+  width: var(--vf-size);
+  height: var(--vf-size);
+  border: 0 solid color-mix(in srgb, var(--ink) 35%, transparent);
+  pointer-events: none;
+}
+
+.vfTl,
+.vfTr {
+  top: calc(var(--vf-gap) + env(safe-area-inset-top, 0px));
+  border-top-width: 2px;
+}
+
+.vfBl,
+.vfBr {
+  bottom: calc(var(--vf-gap) + env(safe-area-inset-bottom, 0px));
+  border-bottom-width: 2px;
+}
+
+.vfTl,
+.vfBl {
+  left: calc(var(--vf-gap) + env(safe-area-inset-left, 0px));
+  border-left-width: 2px;
+}
+
+.vfTr,
+.vfBr {
+  right: calc(var(--vf-gap) + env(safe-area-inset-right, 0px));
+  border-right-width: 2px;
+}
+
+// Barra REC
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rec {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--rec);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--rec) 18%, transparent);
+  animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.25; }
+}
+
+.tc {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+// Conteúdo
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(12px, 2.6vh, 30px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.4vh, 14px);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  font-size: clamp(28px, min(6vw, 8vh), 72px);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.pd {
+  color: var(--rec);
+}
+
+.lede {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--muted);
+  font-size: clamp(15px, 2.1vh, 18px);
+}
+
+// Cadastros
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.both {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.bothMark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.or {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    'logo name'
+    'logo domain'
+    'cta cta';
+  align-items: center;
+  column-gap: 16px;
+  min-width: 0;
+  padding: clamp(14px, 2.4vh, 22px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 18px 36px -24px var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+
+  // Marcas de foco da câmera, aparecem ao passar o mouse
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 12px;
+    pointer-events: none;
+    opacity: 0;
+    background:
+      linear-gradient(var(--accent), var(--accent)) left top / 16px 2px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) left top / 2px 16px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) right top / 16px 2px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) right top / 2px 16px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) left bottom / 16px 2px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) left bottom / 2px 16px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) right bottom / 16px 2px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) right bottom / 2px 16px no-repeat;
+    transition: opacity 0.2s, inset 0.25s;
+  }
+
+  &:hover,
+  &:focus-within {
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    box-shadow: 0 22px 44px -24px var(--shadow);
+    transform: translateY(-2px);
+
+    &::after {
+      opacity: 1;
+      inset: 8px;
+    }
+
+    .arm {
+      background: var(--live);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 25%, transparent);
+    }
+  }
+}
+
+.arm {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.logo {
+  grid-area: logo;
+  display: grid;
+  place-items: center;
+  width: clamp(52px, 8.5vh, 68px);
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  background: var(--logo-tile);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent);
+
+  img,
+  svg {
+    display: block;
+    width: 62%;
+    height: 62%;
+  }
+}
+
+.name {
+  grid-area: name;
+  align-self: end;
+  margin: 0;
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  font-size: clamp(26px, min(3.6vw, 5.2vh), 40px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.domain {
+  grid-area: domain;
+  align-self: start;
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.cta {
+  grid-area: cta;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(12px, 2vh, 18px);
+  padding: 14px 18px;
+  border-radius: 11px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--accent-hover);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+}
+
+.arrow {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 1;
+}
+
+// Ficha com 3 fatos
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 10px 14px 0 0;
+
+  & + & {
+    padding-left: 14px;
+    border-left: 1px solid var(--line);
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  dd {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  strong {
+    font-size: clamp(15px, 2.1vh, 18px);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  span {
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+}
+
+// Linha do tempo de 1 hora
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tlBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ruler {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.ticks {
+  height: 6px;
+  background: repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px 2.5%);
+}
+
+.track {
+  display: flex;
+  gap: 3px;
+  height: clamp(26px, 4vh, 34px);
+}
+
+.clip {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--accent) 13%, var(--surface));
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playhead {
+  position: absolute;
+  top: 12px;
+  bottom: -3px;
+  left: 62%;
+  width: 2px;
+  background: var(--rec);
+  animation: play 30s linear infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -4px;
+    border: 5px solid transparent;
+    border-top-color: var(--rec);
+  }
+}
+
+@keyframes play {
+  from { left: 0; }
+  to { left: calc(100% - 2px); }
+}
+
+.tlCap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+
+  strong {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+.foot {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+// Celular: cartões em linha, compactos
+@media (max-width: 720px) {
+  .title {
+    font-stretch: 112%;
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .page {
+    --pad-y: 24px;
+  }
+
+  .choices {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .or {
+    width: auto;
+    height: auto;
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: auto;
+    font-size: 14px;
+    line-height: 1;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+  }
+
+  .card {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'logo name cta'
+      'logo domain cta';
+    column-gap: 12px;
+    padding: 12px;
+  }
+
+  .arm {
+    display: none;
+  }
+
+  .logo {
+    width: 50px;
+    border-radius: 12px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .domain {
+    font-size: 12px;
+    margin-top: 0;
+  }
+
+  .cta {
+    margin-top: 0;
+    padding: 12px 14px;
+  }
+
+  .ctaFull {
+    display: none;
+  }
+
+  .both {
+    font-size: 14px;
+  }
+
+  .bothExtra {
+    display: none;
+  }
+
+  // No celular a ficha vira uma lista: rótulo à esquerda, valor e detalhe ao lado
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fact {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0 10px;
+    padding: 7px 0;
+
+    & + & {
+      padding-left: 0;
+      border-left: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    dd {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      column-gap: 6px;
+    }
+
+    strong {
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    // Câmera e tarefas já aparecem na frase de abertura
+    &:not(:first-child) span {
+      display: none;
+    }
+  }
+}
+
+@media (max-height: 720px), (max-width: 720px) {
+  .timeline {
+    display: none;
+  }
+}
+
+@media (max-height: 640px) {
+  .lede {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .page {
+    --pad-y: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot,
+  .playhead {
+    animation: none;
+  }
+
+  .card,
+  .card::after,
+  .arm,
+  .cta {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+}
