@@ -1,5 +1,5 @@
 // Página /ganhar: visual próprio, separado do layout do site.
-// Layout: uma tela só, lida como o visor de uma câmera. Barra REC com contador de acessos,
+// Layout: uma tela só, lida como o visor de uma câmera. Barra REC,
 // manchete, os dois cadastros, a ficha com 3 fatos e a linha do tempo de 1 hora.
 
 @mixin dark-tokens {
@@ -163,44 +163,6 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
-}
-
-.count {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: var(--muted);
-  white-space: nowrap;
-
-  strong {
-    display: inline-block;
-    min-width: 4.5ch;
-    text-align: right;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-  }
-}
-
-.countDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--live);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 28%, transparent);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--live) 0%, transparent); }
 }
 
 // Conteúdo
@@ -717,8 +679,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .dot,
-  .playhead,
-  .countDot {
+  .playhead {
     animation: none;
   }
 

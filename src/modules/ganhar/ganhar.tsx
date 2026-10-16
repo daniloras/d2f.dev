@@ -1,5 +1,5 @@
 import { Archivo, JetBrains_Mono } from 'next/font/google'
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import { clips, facts, platforms, rulerMarks } from '@/modules/ganhar/ganhar.data'
 import styles from '@/modules/ganhar/ganhar.module.scss'
@@ -37,32 +37,6 @@ const Timecode = () => {
   )
 }
 
-// Registra este acesso uma vez e mostra o total devolvido pelo servidor.
-const VisitCounter = () => {
-  const [total, setTotal] = useState<number | null>(null)
-  const [failed, setFailed] = useState(false)
-  const sent = useRef(false)
-
-  useEffect(() => {
-    if (sent.current) return
-    sent.current = true
-
-    fetch('/api/ganhar/visitas', { method: 'POST' })
-      .then((response) => (response.ok ? response.json() : Promise.reject(new Error(`status ${response.status}`))))
-      .then((data: { total: number }) => setTotal(data.total))
-      .catch(() => setFailed(true))
-  }, [])
-
-  if (failed) return null
-
-  return (
-    <span className={styles.count} aria-live="polite">
-      <span className={styles.countDot} aria-hidden="true" />
-      <strong>{total === null ? '…' : total.toLocaleString('pt-BR')}</strong> acessos
-    </span>
-  )
-}
-
 export const Ganhar = () => {
   return (
     <div className={`${styles.page} ${archivo.variable} ${jetbrainsMono.variable}`}>
@@ -77,7 +51,7 @@ export const Ganhar = () => {
             <span className={styles.dot} aria-hidden="true" />
             REC <Timecode />
           </span>
-          <VisitCounter />
+          <span>Renda extra em casa</span>
         </header>
 
         <main className={styles.main}>
